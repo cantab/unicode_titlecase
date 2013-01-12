@@ -4,7 +4,7 @@ module UnicodeTitlecase
   module CoreExt
     module String
       def titlecase
-        small_words = %w(a an and as at but by en for if in of on or the to v v. via vs vs.)
+        small_words = %w(a an and as at but by be en for if in is of on or the to v v. via vs vs.)
 
         x = split(" ").map do |word|
           # note: word could contain non-word characters!

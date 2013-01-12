@@ -4,7 +4,7 @@ should_pass:
     expect: "Q&A With Steve Jobs: 'That's What Happens in Technology'"
   -
     example: "what is AT&T's problem?"
-    expect: "What Is AT&T's Problem?"
+    expect: "What is AT&T's Problem?"
   -
     example: "Apple deal with AT&T falls through"
     expect: "Apple Deal With AT&T Falls Through"
@@ -28,7 +28,7 @@ should_pass:
     expect: "'By the Way, Small Word at the Start but Within Quotes.'"
   -
     example: "small word at end is nothing to be afraid of"
-    expect: "Small Word at End Is Nothing to Be Afraid Of"
+    expect: "Small Word at End is Nothing to be Afraid Of"
   -
     example: "Starting Sub-Phrase with a small word: a trick, perhaps?"
     expect: "Starting Sub-Phrase With a Small Word: A Trick, Perhaps?"
@@ -40,7 +40,7 @@ should_pass:
     expect: "Sub-Phrase With a Small Word in Quotes: \"A Trick, Perhaps?\""
   -
     example: "\"nothing to be afraid of?\""
-    expect: "\"Nothing to Be Afraid Of?\""
+    expect: "\"Nothing to be Afraid Of?\""
   -
     example: "a thing"
     expect: "A Thing"
@@ -61,7 +61,7 @@ should_pass:
     expect: "I End in a Period."
   -
     example: "this is a test.com!?"
-    expect: "This Is a test.com!?"
+    expect: "This is a test.com!?"
   -
     example: ""
     expect: ""
