@@ -1,15 +1,9 @@
-require File.join(File.dirname(__FILE__), *%w[../lib/unicode_titlecase.rb])
+require 'spec_helper'
 require "yaml"
 
 describe String do
-  File.open(File.join(File.dirname(__FILE__), *%w[examples.yaml])) do |file|
-    examples = YAML.load(file)
-    examples["should_pass"].each do |e|
-      it "should be the expected value (#{e["expect"]})" do
-        e["example"].titlecase.should == e["expect"]
-      end
-    end
-  end
+
+  run_examples_from_file('standard_examples.yaml')
 
   # Ensure the self-modifying version works correctly
   it "should self-modify the original value in place" do
