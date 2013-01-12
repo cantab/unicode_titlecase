@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), *%w[../lib/titlecase.rb])
+require File.join(File.dirname(__FILE__), *%w[../lib/unicode_titlecase.rb])
 require "yaml"
 
 describe String do
