@@ -1,0 +1,7 @@
+should_pass:
+  -
+    example: "W Hiszpanii mży, gdy dżdżyste przyjdą dni"
+    expect: "W Hiszpanii Mży, Gdy Dżdżyste Przyjdą Dni"
+  -
+    example: "AVANGART KURUTMA TEKNOLOJİLERİ SANAYİ İÇ VE DIŞ TİCARET LİMİLED ŞİRKETİ"
+    expect: "Avangart Kurutma Teknoloji̇leri̇ Sanayi̇ i̇ç Ve Diş Ti̇caret Li̇mi̇led Şi̇rketi̇"

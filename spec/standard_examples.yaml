@@ -63,5 +63,8 @@ should_pass:
     example: "this is a test.com!?"
     expect: "This is a test.com!?"
   -
+    example: "THIS IS AN EXAMPLE OF A SENTENCE THAT COMES TO US IN ALL CAPS"
+    expect: "This is an Example of a Sentence That Comes to Us in All Caps"
+  -
     example: ""
     expect: ""
