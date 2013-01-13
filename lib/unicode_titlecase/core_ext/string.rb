@@ -6,7 +6,7 @@ module UnicodeTitlecase
   module CoreExt
     module String
 
-      def titlecase
+      def unicode_titlecase
         # List of exceptions: small_words are words that should always be in lowercase; big_words are words that should always be in uppercase
         small_words = %w(a an and as at but by be en for if in is of on or the to v v. via vs vs.)
         big_words = %w(AB A.B. A/B AS A.S. A/S S.A. DNA RNA HBV HIV I II III IV V VI VII VIII IX X AC DC Q&A AT&T)
@@ -27,7 +27,6 @@ module UnicodeTitlecase
 
         # capitalize first and last words
         x.first.to_s.smart_capitalize!
-
         # Uncomment the next line if you want the last word to be always initial caps
         x.last.to_s.smart_capitalize!
 
@@ -35,8 +34,8 @@ module UnicodeTitlecase
         x.join(" ").gsub(/:\s?(\W*#{small_words.join("|")}\W*)\s/) { ": #{$1.smart_capitalize} " }
       end
 
-      def titlecase!
-        replace(titlecase)
+      def unicode_titlecase!
+        replace(unicode_titlecase)
       end
 
       def smart_capitalize

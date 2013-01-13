@@ -10,7 +10,7 @@ describe String do
   # Ensure the self-modifying version works correctly
   it "should self-modify the original value in place" do
     string = 'a complex thing'
-    string.titlecase!
+    string.unicode_titlecase!
     string.should == 'A Complex Thing'
   end
 end
