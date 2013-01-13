@@ -1,7 +1,22 @@
 should_pass:
   -
     example: "W Hiszpanii mży, gdy dżdżyste przyjdą dni"
-    expect: "W Hiszpanii Mży, Gdy Dżdżyste Przyjdą Dni"
+    expect:  "W Hiszpanii Mży, Gdy Dżdżyste Przyjdą Dni"
   -
     example: "AVANGART KURUTMA TEKNOLOJİLERİ SANAYİ İÇ VE DIŞ TİCARET LİMİLED ŞİRKETİ"
-    expect: "Avangart Kurutma Teknoloji̇leri̇ Sanayi̇ i̇ç Ve Diş Ti̇caret Li̇mi̇led Şi̇rketi̇"
+    expect:  "Avangart Kurutma Teknoloji̇leri̇ Sanayi̇ i̇ç Ve Diş Ti̇caret Li̇mi̇led Şi̇rketi̇"
+
+  -
+    example: "МНОГОСЛОЙНЫЙ ОПТИЧЕСКИЙ ДИСК"
+    expect:  "Многослойный Оптический Диск"
+
+  -
+    example: "УСТРОЙСТВО ДЛЯ ЗАПИСИ-СТИРАНИЯ-СЧИТЫВАНИЯ ИНФОРМАЦИИ В МНОГОСЛОЙНОМ ОПТИЧЕСКОМ ДИСКЕ"
+    expect:  "Устройство Для Записи-стирания-считывания Информации В Многослойном Оптическом Диске"
+
+  -
+    example: "KIYKO, Vаdim Vеniаminоviсh, dеr. Khоdаеvо, 75, Сhеkhоvsky r-n, Моskоvskауа оbl., 142302"
+    expect:  "KIYKO, Vаdim Vеniаminоviсh, Dеr. Khоdаеvо, 75, Сhеkhоvsky R-n, Моskоvskауа Оbl., 142302"
+  -
+    example: ""
+    expect:  ""
