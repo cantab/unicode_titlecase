@@ -11,14 +11,13 @@ module UnicodeTitlecase
         small_words = %w(a an and as at but by be en for if in is of on or the to v v. via vs vs.)
         big_words = %w(AB A.B. A/B AS A.S. A/S S.A. DNA RNA HBV HIV I II III IV V VI VII VIII IX X AC DC Q&A AT&T)
 
-        if self.all_caps?
-          replace(UnicodeUtils.downcase(self))
-        end
-
         x = split(" ").map do |word|
           # UnicodeUtils.each_word(self).map do |word|
           # note: word could contain non-word characters!
           # downcase all small_words, upcase all big words, smart capitalize the rest
+
+          word = (UnicodeUtils.downcase(word)) if word.all_caps?
+
           small_words.include?(UnicodeUtils.downcase(word.gsub(/\W/, ""))) ? replace(UnicodeUtils.downcase(word)) : big_words.include?(UnicodeUtils.upcase(word.gsub(/\W/, ""))) ? replace(UnicodeUtils.upcase(word)) : word.smart_capitalize!
           word
         end
@@ -54,11 +53,7 @@ module UnicodeTitlecase
       end
 
       def has_caps?
-        uppercase_count = self.each_char.inject(0) do |c, char|
-          c += 1 if UnicodeUtils.uppercase_char?(char)
-          c
-        end
-        return uppercase_count > 0
+        return !UnicodeUtils.downcase(self) == self
       end
 
       def all_caps?
