@@ -1,0 +1,19 @@
+should_pass:
+  -
+    example: "THIS IS AN EXAMPLE OF A SENTENCE THAT STARTS OFF IN ALL CAPS"
+    expect:  "This is an Example of a Sentence That Starts Off in All Caps"
+  -
+    example: "THE RAIN IN SPAIN STAYS MAINLY IN THE PLAIN"
+    expect:  "The Rain in Spain Stays Mainly in the Plain"
+  -
+    example: "MULTI-LAYER OPTICAL DISC"
+    expect:  "Multi-layer Optical Disc"
+  -
+    example: "LIM, SAI KIANG"
+    expect:  "Lim, Sai Kiang"
+  -
+    example: "KHOO, Chong-Yee"
+    expect:  "Khoo, Chong-Yee"
+  -
+    example: "KHOO, CHONG-YEE"
+    expect:  "Khoo, Chong-yee"
