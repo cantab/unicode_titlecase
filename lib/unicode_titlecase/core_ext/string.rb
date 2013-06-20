@@ -33,6 +33,30 @@ module UnicodeTitlecase
         x.join(" ").gsub(/:\s?(\W*#{small_words.join("|")}\W*)\s/) { ": #{$1.smart_capitalize} " }
       end
 
+
+      def split_to_words
+        small_words = %w(a an and as at but by be for if in is of on or the to v v. via vs vs.)
+        big_words = %w(AB A.B. A/B AS A.S. A/S S.A. DNA RNA HBV HIV I II III IV V VI VII VIII IX X AC DC Q&A AT&T)
+        split(" ").map do |word|
+          # UnicodeUtils.each_word(self).map do |word|
+          # note: word could contain non-word characters!
+          # downcase all small_words, upcase all big words, smart capitalize the rest
+
+          word = (UnicodeUtils.downcase(word)) if word.all_caps?
+
+          if small_words.include?(UnicodeUtils.downcase(word.gsub(/\W/, ""))) 
+             word.replace(UnicodeUtils.downcase(word))
+          else
+            if big_words.include?(UnicodeUtils.upcase(word.gsub(/\W/, ""))) 
+              word.replace(UnicodeUtils.upcase(word)) 
+            else
+              word.smart_capitalize!
+            end #big_words
+          end # small words
+        end # split
+
+      end # split_to_words
+
       def unicode_titlecase!
         replace(unicode_titlecase)
       end
