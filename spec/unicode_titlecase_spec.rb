@@ -3,9 +3,9 @@ require "yaml"
 
 describe String do
 
-  # run_examples_from_file('standard_examples.yaml')
+  run_examples_from_file('standard_examples.yaml')
 
-  # run_examples_from_file('unicode_examples.yaml')
+  run_examples_from_file('unicode_examples.yaml')
 
   run_examples_from_file('capitalisation_examples.yaml')
 

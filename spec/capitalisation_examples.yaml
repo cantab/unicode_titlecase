@@ -3,10 +3,19 @@ should_pass:
     example: "THIS IS AN EXAMPLE OF A SENTENCE THAT STARTS OFF IN ALL CAPS"
     expect:  "This is an Example of a Sentence That Starts Off in All Caps"
   -
+    example: "This is an example of the same sentence that does not start off in all caps"
+    expect:  "This is an Example of the Same Sentence That Does Not Start Off in All Caps"
+  -
     example: "THE RAIN IN SPAIN STAYS MAINLY IN THE PLAIN"
     expect:  "The Rain in Spain Stays Mainly in the Plain"
   -
+    example: "The rain in Spain stays mainly in the plain"
+    expect:  "The Rain in Spain Stays Mainly in the Plain"
+  -
     example: "MULTI-LAYER OPTICAL DISC"
+    expect:  "Multi-layer Optical Disc"
+  -
+    example: "Multi-layer optical disc"
     expect:  "Multi-layer Optical Disc"
   -
     example: "LIM, SAI KIANG"

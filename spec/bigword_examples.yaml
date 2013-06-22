@@ -1,0 +1,4 @@
+should_pass:
+  -
+    example: "ABT ADVANCED BIOANALYTICAL TECHNOLOGY GMBH & CO KG"
+    expect: "Abt Advanced Bioanalytical Technology GmbH & Co KG"

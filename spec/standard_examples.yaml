@@ -1,5 +1,8 @@
 should_pass:
   -
+    example: "The rain in spain stays mainly on the plain"
+    expect:  "The Rain in Spain Stays Mainly on the Plain"
+  -
     example: "Q&A with Steve Jobs: 'That's what happens in technology'"
     expect:  "Q&A With Steve Jobs: 'That's What Happens in Technology'"
   -

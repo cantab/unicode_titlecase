@@ -9,17 +9,23 @@ module UnicodeTitlecase
       def unicode_titlecase
         # List of exceptions: small_words are words that should always be in lowercase; big_words are words that should always be in uppercase
         small_words = %w(a an and as at but by be for if in is of on or the to v v. via vs vs.)
-        big_words = %w(AB A.B. A/B AS A.S. A/S S.A. DNA RNA HBV HIV I II III IV V VI VII VIII IX X AC DC Q&A AT&T)
+        big_words = %w(AB A.B. A/B AS A.S. A/S S.A. KG GmbH DNA RNA HBV HIV I II III IV V VI VII VIII IX X AC DC Q&A AT&T)
 
         x = split(" ").map do |word|
-          # UnicodeUtils.each_word(self).map do |word|
           # note: word could contain non-word characters!
           # downcase all small_words, upcase all big words, smart capitalize the rest
 
-          word = (UnicodeUtils.downcase(word)) if word.all_caps?
+          word.replace(UnicodeUtils.downcase(word)) if word.all_caps? and not big_words.include?(word)
 
-          small_words.include?(UnicodeUtils.downcase(word.gsub(/\W/, ""))) ? replace(UnicodeUtils.downcase(word)) : big_words.include?(UnicodeUtils.upcase(word.gsub(/\W/, ""))) ? replace(UnicodeUtils.upcase(word)) : word.smart_capitalize!
-          word
+          if small_words.include?(UnicodeUtils.downcase(word.gsub(/\W/, "")))
+            word.replace(UnicodeUtils.downcase(word))
+          else
+            if big_words.include?(UnicodeUtils.upcase(word.gsub(/\W/, "")))
+              word.replace(UnicodeUtils.upcase(word))
+            else
+              word.smart_capitalize!
+            end
+          end
         end
 
         x = x - [' ']
