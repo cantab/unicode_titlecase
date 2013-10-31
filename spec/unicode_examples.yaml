@@ -4,7 +4,7 @@ should_pass:
     expect:  "W Hiszpanii Mży, Gdy Dżdżyste Przyjdą Dni"
   -
     example: "AVANGART KURUTMA TEKNOLOJİLERİ SANAYİ İÇ VE DIŞ TİCARET LİMİLED ŞİRKETİ"
-    expect:  "Avangart Kurutma Teknolojileri Sanayi İç Ve Diş Ticaret Limiled Şirketi"
+    expect:  "Avangart Kurutma Teknoloji̇leri̇ Sanayi̇ İÇ Ve Diş Ti̇caret Li̇mi̇led Şi̇rketi̇"
   -
     example: "МНОГОСЛОЙНЫЙ ОПТИЧЕСКИЙ ДИСК"
     expect:  "Многослойный Оптический Диск"
