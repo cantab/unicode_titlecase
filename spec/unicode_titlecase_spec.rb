@@ -9,10 +9,21 @@ describe String do
 
   run_examples_from_file('capitalisation_examples.yaml')
 
-  # Ensure the self-modifying version works correctly
-  it "should self-modify the original value in place" do
-    string = 'a complex thing'
-    string.unicode_titlecase!
-    string.should == 'A Complex Thing'
+  describe "unicode_titlecase method" do
+    it "does not modify the original string" do
+      string = 'a complex thing'
+      string.unicode_titlecase
+      expect(string).to eq('a complex thing')
+      expect(string).to_not eq('A Complex Thing')
+    end
+  end
+
+  describe "unicode_titlecase! method" do
+    it "self-modifies the original value in place" do
+      string = 'a complex thing'
+      string.unicode_titlecase!
+      expect(string).to eq('A Complex Thing')
+      expect(string).to_not eq('a complex thing')
+    end
   end
 end
