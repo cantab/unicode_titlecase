@@ -26,3 +26,6 @@ should_pass:
   -
     example: "Sūn Zhōngshān"
     expect: "Sūn Zhōngshān"
+  -
+    example: "sūn zhōngshān nányáng jìniàn guǎn"
+    expect: "Sūn Zhōngshān Nányáng Jìniàn Guǎn"
