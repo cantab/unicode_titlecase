@@ -1,7 +1,20 @@
 should_pass:
   -
-    example: "ABT ADVANCED BIOANALYTICAL TECHNOLOGY GMBH & CO KG"
-    expect: "Abt Advanced Bioanalytical Technology GmbH & Co KG"
+    example: "Scientists discover DNA body clock"
+    expect: "Scientists Discover DNA Body Clock"
+  -
+    example: "Swedish firm Fingerprint Cards AB"
+    expect: "Swedish Firm Fingerprint Cards AB"
+  -
+    example: "Swedish firm Fingerprint Cards A.B."
+    expect: "Swedish Firm Fingerprint Cards A.B."
+  -
+    example: "Swedish firm Fingerprint Cards A/B"
+    expect: "Swedish Firm Fingerprint Cards A/B"
+  -
+    example: "Liver cancer often diagnosed late with poor survival in people with HIV"
+    expect: "Liver Cancer Often Diagnosed Late With Poor Survival in People With HIV"
+  -
     example: "A limited liability company (LLC) is legal entity"
     expect: "A Limited Liability Company (LLC) is Legal Entity"
   -
