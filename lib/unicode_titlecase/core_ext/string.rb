@@ -9,7 +9,7 @@ module UnicodeTitlecase
       def unicode_titlecase
         # List of exceptions: small_words are words that should always be in lowercase; big_words are words that should always be in uppercase
         small_words = %w(a an and as at but by be for if in is of on or the to v v. via vs vs.)
-        big_words = %w(AB A.B. A/B AS A.S. A/S S.A. KG GmbH DNA RNA HBV HIV I II III IV V VI VII VIII IX X AC DC Q&A AT&T)
+        big_words = %w(AB A.B. A/B AS A.S. A/S S.A. KG DNA RNA HBV HIV I II III IV V VI VII VIII IX X AC DC Q&A AT&T)
 
         x = split(" ").map do |word|
           # note: word could contain non-word characters!
