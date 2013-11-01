@@ -19,13 +19,13 @@ should_pass:
     expect:  "Kiyko, Vаdim Vеniаminоviсh, Dеr. Khоdаеvо, 75, Сhеkhоvsky R-n, Моskоvskауа Оbl., 142302"
   -
     example: "hyvää huomenta"
-    expect: "Hyvää Huomenta"
+    expect:  "Hyvää Huomenta"
   -
     example: "孫中山"
     expect:  "孫中山"
   -
     example: "Sūn Zhōngshān"
-    expect: "Sūn Zhōngshān"
+    expect:  "Sūn Zhōngshān"
   -
     example: "sūn zhōngshān nányáng jìniàn guǎn"
-    expect: "Sūn Zhōngshān Nányáng Jìniàn Guǎn"
+    expect:  "Sūn Zhōngshān Nányáng Jìniàn Guǎn"

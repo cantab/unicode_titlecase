@@ -1,28 +1,28 @@
 should_pass:
   -
     example: "Scientists discover DNA body clock"
-    expect: "Scientists Discover DNA Body Clock"
+    expect:  "Scientists Discover DNA Body Clock"
   -
     example: "Swedish firm Fingerprint Cards AB"
-    expect: "Swedish Firm Fingerprint Cards AB"
+    expect:  "Swedish Firm Fingerprint Cards AB"
   -
     example: "Swedish firm Fingerprint Cards A.B."
-    expect: "Swedish Firm Fingerprint Cards A.B."
+    expect:  "Swedish Firm Fingerprint Cards A.B."
   -
     example: "Swedish firm Fingerprint Cards A/B"
-    expect: "Swedish Firm Fingerprint Cards A/B"
+    expect:  "Swedish Firm Fingerprint Cards A/B"
   -
     example: "Liver cancer often diagnosed late with poor survival in people with HIV"
-    expect: "Liver Cancer Often Diagnosed Late With Poor Survival in People With HIV"
+    expect:  "Liver Cancer Often Diagnosed Late With Poor Survival in People With HIV"
   -
     example: "A limited liability company (LLC) is legal entity"
     expect: "A Limited Liability Company (LLC) is Legal Entity"
   -
     example: "Cantab LLP; small but perfectly formed"
-    expect: "Cantab LLP; Small but Perfectly Formed"
+    expect:  "Cantab LLP; Small but Perfectly Formed"
   -
-    example: "a limited liability company (llc) is legal entity"
-    expect: "A Limited Liability Company (LLC) is Legal Entity"
+    example: "a limited liability company (llc) is a legal entity"
+    expect:  "A Limited Liability Company (LLC) is a Legal Entity"
   -
     example: "cantab llp. small but perfectly formed"
-    expect: "Cantab LLP. Small but Perfectly Formed"
+    expect:  "Cantab LLP. Small but Perfectly Formed"

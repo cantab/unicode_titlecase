@@ -1,4 +1,4 @@
 should_pass:
   -
     example: "a government by the people for the people"
-    expect: "A Government by the People for the People"
+    expect:  "A Government by the People for the People"

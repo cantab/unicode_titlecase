@@ -13,7 +13,7 @@ should_pass:
     expect:  "The Rain in Spain Stays Mainly in the Plain"
   -
     example: "THE VITAMINS ARE IN MY FRESH CALIFORNIA RAISINS"
-    expect: "The Vitamins Are in My Fresh California Raisins"
+    expect:  "The Vitamins Are in My Fresh California Raisins"
   -
     example: "MULTI-LAYER OPTICAL DISC"
     expect:  "Multi-layer Optical Disc"
