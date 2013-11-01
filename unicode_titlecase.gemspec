@@ -6,11 +6,11 @@ require 'unicode_titlecase/version'
 Gem::Specification.new do |gem|
   gem.name          = "unicode_titlecase"
   gem.version       = UnicodeTitlecase::VERSION
-  gem.authors       = ["Chong-Yee Khoo"]
+  gem.authors       = ["Dr Chong-Yee Khoo"]
   gem.email         = ["mail@cykhoo.com"]
   gem.description   = %q{Titlecaser with Unicode smarts}
   gem.summary       = %q{Change text, including in Unicode, to title case}
-  gem.homepage      = "http://github.com/cykhoo/unicode_titlecase"
+  gem.homepage      = "http://github.com/cantab/unicode_titlecase"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
