@@ -18,11 +18,11 @@ should_pass:
     example: "Multi-layer optical disc"
     expect:  "Multi-layer Optical Disc"
   -
-    example: "LIM, SAI KIANG"
-    expect:  "Lim, Sai Kiang"
+    example: "SUN, Yat-Sen"
+    expect:  "Sun, Yat-Sen"
   -
-    example: "KHOO, Chong-Yee"
-    expect:  "Khoo, Chong-Yee"
+    example: "SUN, Yat-sen"
+    expect:  "Sun, Yat-sen"
   -
-    example: "KHOO, CHONG-YEE"
-    expect:  "Khoo, Chong-yee"
+    example: "SUN, YAT-SEN"
+    expect:  "Sun, Yat-sen"
