@@ -2,3 +2,14 @@ should_pass:
   -
     example: "ABT ADVANCED BIOANALYTICAL TECHNOLOGY GMBH & CO KG"
     expect: "Abt Advanced Bioanalytical Technology GmbH & Co KG"
+    example: "A limited liability company (LLC) is legal entity"
+    expect: "A Limited Liability Company (LLC) is Legal Entity"
+  -
+    example: "Cantab LLP; small but perfectly formed"
+    expect: "Cantab LLP; Small but Perfectly Formed"
+  -
+    example: "a limited liability company (llc) is legal entity"
+    expect: "A Limited Liability Company (LLC) is Legal Entity"
+  -
+    example: "cantab llp. small but perfectly formed"
+    expect: "Cantab LLP. Small but Perfectly Formed"
