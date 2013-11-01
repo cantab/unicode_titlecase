@@ -1,4 +1,6 @@
 # unicode_titlecase gem
+[![Gem Version](https://badge.fury.io/rb/unicode_titlecase.png)](http://badge.fury.io/rb/unicode_titlecase)
+[![Code Climate](https://codeclimate.com/github/cantab/unicode_titlecase.png)](https://codeclimate.com/github/cantab/unicode_titlecase)
 
 A set of methods added onto the String class to allow easy title casing of strings with Unicode text.
 
@@ -7,7 +9,7 @@ A set of methods added onto the String class to allow easy title casing of strin
 * handles Unicode text
 * specify words that should always be left capitalised
 * specify words that should always be left in lower case
-	
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -31,10 +33,10 @@ To use, just call the unicode_titlecase method on any string you want to titleca
 For example,
 
     require 'unicode_titlecase'
-    
+
     s = "the rain in spain stays mainly in the plain"
     puts s.unicode_titlecase
-    
+
 gives
 
     "The Rain in Spain Stays Mainly in the Plain"
@@ -80,10 +82,10 @@ Much of the source is based on Sam Souder's 'titlecase' gem at [samsouder/titlec
   - implemented rules in Ruby
   - [Github repo] (http://github.com/samsouder/titlecase)
   - [Rubygems.org] (http://rubygems.org/gems/titlecase)
- 
+
 #### Others
   - Jim Nanney ([Github](https://github.com/jimnanney)) contributed to some of the code (go remote pairing!)
-  
+
 ## Further Features?
 Here's a list of things we'd like to see in a future version of the unicode_titlecase gem. Please feel free to take any of these on (see [Contributing] (http://github.com/cantab/unicode_titlecase#contributing) below).
   - handle strings with 'mixed case words' such as GmbH
