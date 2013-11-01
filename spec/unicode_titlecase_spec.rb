@@ -38,6 +38,10 @@ describe String do
       run_examples_from_file('capitalisation_examples.yaml')
     end
 
+    describe "smallword examples" do
+      run_examples_from_file('smallword_examples.yaml')
+    end
+
     describe "standard examples" do
       run_examples_from_file('standard_examples.yaml')
     end
