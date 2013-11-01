@@ -1,6 +1,7 @@
 # unicode_titlecase gem
 [![Gem Version](https://badge.fury.io/rb/unicode_titlecase.png)](http://badge.fury.io/rb/unicode_titlecase)
 [![Code Climate](https://codeclimate.com/github/cantab/unicode_titlecase.png)](https://codeclimate.com/github/cantab/unicode_titlecase)
+[![Build Status](https://travis-ci.org/cantab/unicode_titlecase.png?branch=master)](https://travis-ci.org/cantab/unicode_titlecase)
 
 A set of methods added onto the String class to allow easy title casing of strings with Unicode text.
 
