@@ -3,13 +3,15 @@
 [![Code Climate](https://codeclimate.com/github/cantab/unicode_titlecase.png)](https://codeclimate.com/github/cantab/unicode_titlecase)
 [![Build Status](https://travis-ci.org/cantab/unicode_titlecase.png?branch=master)](https://travis-ci.org/cantab/unicode_titlecase)
 
-A set of methods added onto the String class to allow easy title casing of strings with Unicode text.
+Gem to enable easy title casing of strings containing Unicode text.
+
+## Introduction
+This gem patches the String class to provide a unicode_titlecase method, which returns a string that is 'title cased': the first letter in each significant word is in capitals with the rest in lowercase.
 
 ## Features
-
-* handles Unicode text
-* specify words that should always be left capitalised
-* specify words that should always be left in lower case
+* handles text containing Unicode characters
+* handles words that should always be left capitalised (e.g., 'HIV')
+* handles words that should always be left in lower case (e.g., 'to')
 
 ## Installation
 
@@ -23,11 +25,10 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install unicode_titlecase e'.
+    $ gem install unicode_titlecase
 
 ## Usage
 
-This gem patches the String class to provide a unicode_titlecase method, which returns a string that is 'title cased': the first letter in each significant word is in capitals with the rest in lowercase.
 
 To use, just call the unicode_titlecase method on any string you want to titlecase.
 
@@ -48,9 +49,13 @@ More examples are set out in the YAML files in the /spec/examples directory.
 
 With the help of the unicode-utils gem, we can properly handle title casing of Unicode text.
 
-For example, the string 'W Hiszpanii mży, gdy dżdżyste przyjdą dni' will be titlecased to 'W Hiszpanii Mży, Gdy Dżdżyste Przyjdą Dni'.
+For example, the string 
 
-Note: the source text may contain Unicode, or it may consist solely of ASCII. The unicode_titlecase method will work with either.
+	W Hiszpanii mży, gdy dżdżyste przyjdą dni
+
+is titlecased to
+
+	W Hiszpanii Mży, Gdy Dżdżyste Przyjdą Dni
 
 ## 'Big Words'
 
@@ -58,13 +63,27 @@ In some circumstances, you may have source text that contains words that should 
 
 The unicode_titlecase gem allows you to set up a list of 'big words' which it will keep upper-cased.
 
+	"DNA vs RNA - difference and comparison".unicode_titlecase
+
+produces
+
+	"DNA vs RNA - Difference and Comparison"
+
 ## 'Small Words'
 
 Similarly, you source text may contain words that should always be in lower case.
 
-By convention, a number of short words such as 'is', 'of' and 'by' are considered to look better in text if they remain in lower case.
+For example, in English, a number of short words such as 'is', 'of' and 'by' might be considered to look better in title cased text if they remain in lower case.
 
-For example, the phrase 'a government by the people for the people' might be title cased to 'A Government by the People for the People'.
+Thus
+
+
+	'a government by the people for the people'.unicode_titlecase
+	
+	
+will give
+
+	'A Government by the People for the People'
 
 ## Sources and Acknowledgements
 
