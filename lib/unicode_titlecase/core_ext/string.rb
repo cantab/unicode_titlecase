@@ -16,7 +16,7 @@ module UnicodeTitlecase
           # note: word could contain non-word characters!
           # downcase all small_words, upcase all big words, smart capitalize the rest
 
-          word.replace(UnicodeUtils.downcase(word)) if word.all_caps? and not big_words.include?(word)
+          word.replace(UnicodeUtils.downcase(word)) if word.all_caps? and not word.is_big_word?
 
           if SMALL_WORDS.include?(UnicodeUtils.downcase(word.gsub(/\W/, "")))
             word.replace(UnicodeUtils.downcase(word))
@@ -67,6 +67,9 @@ module UnicodeTitlecase
         return UnicodeUtils.upcase(self) == self
       end
 
+      def is_big_word?
+        BIG_WORDS.include?(self)
+      end
     end
   end
 end
