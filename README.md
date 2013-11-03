@@ -57,6 +57,8 @@ is titlecased to
 
 	W Hiszpanii Mży, Gdy Dżdżyste Przyjdą Dni
 
+More examples [here](https://github.com/cantab/unicode_titlecase/blob/master/spec/examples/unicode_examples.yaml).
+
 ## 'Big Words'
 
 In some circumstances, you may have source text that contains words that should remain capitalised. These include Roman numerals ('VIII'), legal entity designations ('SA', 'AB', 'LLC') or technical abbreviations ('RNA', DNA', 'HIV').
@@ -68,6 +70,8 @@ The unicode_titlecase gem allows you to set up a list of 'big words' which it wi
 produces
 
 	"DNA vs RNA - Difference and Comparison"
+	
+More examples [here](https://github.com/cantab/unicode_titlecase/blob/master/spec/examples/bigword_examples.yaml).
 
 ## 'Small Words'
 
@@ -84,6 +88,8 @@ Thus
 will give
 
 	'A Government by the People for the People'
+	
+More examples [here](https://github.com/cantab/unicode_titlecase/blob/master/spec/examples/standard_examples.yaml).
 
 ## Sources and Acknowledgements
 
