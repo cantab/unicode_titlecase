@@ -4,83 +4,6 @@ require 'spec_helper'
 
 describe String do
 
-  describe "smart_capitalize method" do
-
-    context "word with leading single quote mark" do
-
-      it "capitalizes word properly" do
-        expect("'fluvial".smart_capitalize).to eq("'Fluvial")
-      end
-
-      context "and internal capital letter" do
-        it "is left alone" do
-          expect("'flUvial".smart_capitalize).to eq("'flUvial")
-        end
-      end
-
-      context "and internal period" do
-        it "is left alone" do
-          expect("'fl.vial".smart_capitalize).to eq("'fl.vial")
-        end
-      end
-    end
-
-    context "word with leading double quote mark" do
-
-      it "capitalizes word properly" do
-        expect('"fluvial'.smart_capitalize).to eq('"Fluvial')
-      end
-
-      context "and internal capital letter" do
-        it "is left alone" do
-          expect('"flUvial'.smart_capitalize).to eq('"flUvial')
-        end
-      end
-
-      context "and internal period" do
-        it "is left alone" do
-          expect('"fl.vial'.smart_capitalize).to eq('"fl.vial')
-        end
-      end
-    end
-
-    context "word with leading open bracket" do
-      it "capitalizes word properly" do
-        expect('(fluvial'.smart_capitalize).to eq('(Fluvial')
-      end
-
-      context "and internal capital letter" do
-        it "is left alone" do
-          expect('(flUvial'.smart_capitalize).to eq('(flUvial')
-        end
-      end
-
-      context "and internal period" do
-        it "is left alone" do
-          expect('(fl.vial'.smart_capitalize).to eq('(fl.vial')
-        end
-      end
-    end
-
-    context "word with leading open square bracket" do
-      it "capitalizes word properly" do
-        expect('[fluvial'.smart_capitalize).to eq('[Fluvial')
-      end
-
-      context "and internal capital letter" do
-        it "is left alone" do
-          expect('[flUvial'.smart_capitalize).to eq('[flUvial')
-        end
-      end
-
-      context "and internal period" do
-        it "is left alone" do
-          expect('[fl.vial'.smart_capitalize).to eq('[fl.vial')
-        end
-      end
-    end
-  end
-
   describe "has_caps? method" do
 
     context "word with capital letter" do
@@ -196,6 +119,116 @@ describe String do
       string = 'dżdżyste'
       string.unicode_upcase!
       expect(string).to eq('DŻDŻYSTE')
+    end
+  end
+
+  describe "smart_capitalize method" do
+
+    context "word with leading single quote mark" do
+
+      it "capitalizes word properly" do
+        expect("'fluvial".smart_capitalize).to eq("'Fluvial")
+      end
+
+      context "and internal capital letter" do
+        it "is left alone" do
+          expect("'flUvial".smart_capitalize).to eq("'flUvial")
+        end
+      end
+
+      context "and internal period" do
+        it "is left alone" do
+          expect("'fl.vial".smart_capitalize).to eq("'fl.vial")
+        end
+      end
+    end
+
+    context "word with leading double quote mark" do
+
+      it "capitalizes word properly" do
+        expect('"fluvial'.smart_capitalize).to eq('"Fluvial')
+      end
+
+      context "and internal capital letter" do
+        it "is left alone" do
+          expect('"flUvial'.smart_capitalize).to eq('"flUvial')
+        end
+      end
+
+      context "and internal period" do
+        it "is left alone" do
+          expect('"fl.vial'.smart_capitalize).to eq('"fl.vial')
+        end
+      end
+    end
+
+    context "word with leading open bracket" do
+      it "capitalizes word properly" do
+        expect('(fluvial'.smart_capitalize).to eq('(Fluvial')
+      end
+
+      context "and internal capital letter" do
+        it "is left alone" do
+          expect('(flUvial'.smart_capitalize).to eq('(flUvial')
+        end
+      end
+
+      context "and internal period" do
+        it "is left alone" do
+          expect('(fl.vial'.smart_capitalize).to eq('(fl.vial')
+        end
+      end
+    end
+
+    context "word with leading open square bracket" do
+      it "capitalizes word properly" do
+        expect('[fluvial'.smart_capitalize).to eq('[Fluvial')
+      end
+
+      context "and internal capital letter" do
+        it "is left alone" do
+          expect('[flUvial'.smart_capitalize).to eq('[flUvial')
+        end
+      end
+
+      context "and internal period" do
+        it "is left alone" do
+          expect('[fl.vial'.smart_capitalize).to eq('[fl.vial')
+        end
+      end
+    end
+
+    describe "smart_capitalize_ends! method" do
+
+      it "capitalizes first and last members of an array of words" do
+        array = ['fee', 'fi', 'fo', 'fum']
+        String.new.smart_capitalize_ends!(array)
+        expect(array).to eq(['Fee', 'fi', 'fo', 'Fum'])
+      end
+    end
+
+    describe "capitalize_small_words_after_colons method" do
+
+      it "capitalizes small words after colons" do
+        string = 'end: a begining'
+        expect(String.new.capitalize_small_words_after_colons(string)).to eq('end: A begining')
+      end
+    end
+
+    describe "strip_spaces method" do
+
+      it "strips members of array which are spaces" do
+        array = ['the', ' ', 'rain', ' ', 'in', ' ', 'spain', ' ']
+        expect(String.new.strip_spaces(array)).to eq(['the', 'rain', 'in', 'spain'])
+      end
+    end
+
+    describe "strip_non_word_chars method" do
+
+      it "strips characters in a string which are not words" do
+        string = "T!h\"e r£ai$n i%n Spa^in st&*a(y)s ma-in=!ly in t@+he p{}l[]ai#n"
+        expect(string.strip_non_word_chars).to eq("TheraininSpainstaysmainlyintheplain")
+      end
     end
   end
 end

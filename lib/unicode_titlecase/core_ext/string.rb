@@ -18,10 +18,10 @@ module UnicodeTitlecase
 
           word.unicode_downcase! if word.all_caps? and not word.is_big_word?
 
-          if word.gsub(/\W/, "").unicode_downcase.is_small_word?
+          if word.strip_non_word_chars.unicode_downcase.is_small_word?
             word.unicode_downcase!
           else
-            if word.gsub(/\W/, "").unicode_upcase.is_big_word?
+            if word.strip_non_word_chars.unicode_upcase.is_big_word?
               word.unicode_upcase!
             else
               word.smart_capitalize!
@@ -29,15 +29,10 @@ module UnicodeTitlecase
           end
         end
 
-        component_words = component_words - [' ']
-
-        # capitalize first and last words
-        component_words.first.to_s.smart_capitalize!
-        # Uncomment the next line if you want the last word to be always initial caps
-        component_words.last.to_s.smart_capitalize!
-
-        # small words after colons are capitalized
-        component_words.join(" ").gsub(/:\s?(\W*#{SMALL_WORDS.join("|")}\W*)\s/) { ": #{$1.smart_capitalize} " }
+        component_words = strip_spaces(component_words)
+        smart_capitalize_ends!(component_words)
+        result = component_words.join(" ")
+        capitalize_small_words_after_colons(result)
       end
 
       def unicode_titlecase!
@@ -89,6 +84,26 @@ module UnicodeTitlecase
 
       def unicode_upcase!
         replace(unicode_upcase)
+      end
+
+      def smart_capitalize_ends!(ary)
+        # capitalize first and last words
+        ary.first.to_s.smart_capitalize!
+        # Uncomment the next line if you want the last word to be always initial caps
+        ary.last.to_s.smart_capitalize!
+      end
+
+      def capitalize_small_words_after_colons(str)
+        # small words after colons are capitalized
+        str.gsub(/:\s?(\W*#{SMALL_WORDS.join("|")}\W*)\s/) { ": #{$1.smart_capitalize} " }
+      end
+
+      def strip_spaces(ary)
+        ary - [' ']
+      end
+
+      def strip_non_word_chars
+        self.gsub(/\W/, "")
       end
     end
   end
