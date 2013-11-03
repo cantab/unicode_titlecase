@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 require 'spec_helper'
 
 describe String do
@@ -160,6 +162,40 @@ describe String do
         string = 'tis'
         expect(string.is_small_word?).to be_false
       end
+    end
+  end
+
+  describe "unicode_downcase method" do
+
+    it "downcases the word" do
+      string = 'Dżdżyste'
+      expect(string.unicode_downcase).to eq('dżdżyste')
+    end
+  end
+
+  describe "unicode_downcase! method" do
+
+    it "downcases the word in place" do
+      string = 'Dżdżyste'
+      string.unicode_downcase!
+      expect(string).to eq('dżdżyste')
+    end
+  end
+
+  describe "unicode_upcase method" do
+
+    it "upcases the word" do
+      string = 'dżdżyste'
+      expect(string.unicode_upcase).to eq('DŻDŻYSTE')
+    end
+  end
+
+  describe "unicode_upcase! method" do
+
+    it "upcases the word in place" do
+      string = 'dżdżyste'
+      string.unicode_upcase!
+      expect(string).to eq('DŻDŻYSTE')
     end
   end
 end
