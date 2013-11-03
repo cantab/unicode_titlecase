@@ -7,18 +7,18 @@ describe String do
     context "word with leading single quote mark" do
 
       it "capitalizes word properly" do
-        expect("'nuts".smart_capitalize).to eq("'Nuts")
+        expect("'fluvial".smart_capitalize).to eq("'Fluvial")
       end
 
       context "and internal capital letter" do
         it "is left alone" do
-          expect("'nUts".smart_capitalize).to eq("'nUts")
+          expect("'flUvial".smart_capitalize).to eq("'flUvial")
         end
       end
 
       context "and internal period" do
         it "is left alone" do
-          expect("'n.ts".smart_capitalize).to eq("'n.ts")
+          expect("'fl.vial".smart_capitalize).to eq("'fl.vial")
         end
       end
     end
@@ -26,54 +26,54 @@ describe String do
     context "word with leading double quote mark" do
 
       it "capitalizes word properly" do
-        expect('"nuts'.smart_capitalize).to eq('"Nuts')
+        expect('"fluvial'.smart_capitalize).to eq('"Fluvial')
       end
 
       context "and internal capital letter" do
         it "is left alone" do
-          expect('"nUts'.smart_capitalize).to eq('"nUts')
+          expect('"flUvial'.smart_capitalize).to eq('"flUvial')
         end
       end
 
       context "and internal period" do
         it "is left alone" do
-          expect('"n.ts'.smart_capitalize).to eq('"n.ts')
+          expect('"fl.vial'.smart_capitalize).to eq('"fl.vial')
         end
       end
     end
 
     context "word with leading open bracket" do
       it "capitalizes word properly" do
-        expect('(nuts'.smart_capitalize).to eq('(Nuts')
+        expect('(fluvial'.smart_capitalize).to eq('(Fluvial')
       end
 
       context "and internal capital letter" do
         it "is left alone" do
-          expect('(nUts'.smart_capitalize).to eq('(nUts')
+          expect('(flUvial'.smart_capitalize).to eq('(flUvial')
         end
       end
 
       context "and internal period" do
         it "is left alone" do
-          expect('(n.ts'.smart_capitalize).to eq('(n.ts')
+          expect('(fl.vial'.smart_capitalize).to eq('(fl.vial')
         end
       end
     end
 
     context "word with leading open square bracket" do
       it "capitalizes word properly" do
-        expect('[nuts'.smart_capitalize).to eq('[Nuts')
+        expect('[fluvial'.smart_capitalize).to eq('[Fluvial')
       end
 
       context "and internal capital letter" do
         it "is left alone" do
-          expect('[nUts'.smart_capitalize).to eq('[nUts')
+          expect('[flUvial'.smart_capitalize).to eq('[flUvial')
         end
       end
 
       context "and internal period" do
         it "is left alone" do
-          expect('[n.ts'.smart_capitalize).to eq('[n.ts')
+          expect('[fl.vial'.smart_capitalize).to eq('[fl.vial')
         end
       end
     end
