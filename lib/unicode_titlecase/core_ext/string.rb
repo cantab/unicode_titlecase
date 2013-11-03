@@ -18,10 +18,10 @@ module UnicodeTitlecase
 
           word.replace(UnicodeUtils.downcase(word)) if word.all_caps? and not word.is_big_word?
 
-          if SMALL_WORDS.include?(UnicodeUtils.downcase(word.gsub(/\W/, "")))
+          if UnicodeUtils.downcase(word.gsub(/\W/, "")).is_small_word?
             word.replace(UnicodeUtils.downcase(word))
           else
-            if BIG_WORDS.include?(UnicodeUtils.upcase(word.gsub(/\W/, "")))
+            if UnicodeUtils.upcase(word.gsub(/\W/, "")).is_big_word?
               word.replace(UnicodeUtils.upcase(word))
             else
               word.smart_capitalize!
@@ -60,7 +60,7 @@ module UnicodeTitlecase
       end
 
       def has_caps?
-        return !UnicodeUtils.downcase(self) == self
+        return !(UnicodeUtils.downcase(self) == self)
       end
 
       def all_caps?
@@ -69,6 +69,10 @@ module UnicodeTitlecase
 
       def is_big_word?
         BIG_WORDS.include?(self)
+      end
+
+      def is_small_word?
+        SMALL_WORDS.include?(self)
       end
     end
   end

@@ -143,4 +143,23 @@ describe String do
       end
     end
   end
+
+  describe "is_small_word? method" do
+
+    context "word in small words list" do
+
+      it "identifies it as being a small word" do
+        string = 'is'
+        expect(string.is_small_word?).to be_true
+      end
+    end
+
+    context "word not in small words list" do
+
+      it "identifies it as not being a small word" do
+        string = 'tis'
+        expect(string.is_small_word?).to be_false
+      end
+    end
+  end
 end
