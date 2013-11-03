@@ -12,7 +12,7 @@ module UnicodeTitlecase
 
       def unicode_titlecase
 
-        x = split(" ").map do |word|
+        component_words = split(" ").map do |word|
           # note: word could contain non-word characters!
           # downcase all small_words, upcase all big words, smart capitalize the rest
 
@@ -29,15 +29,15 @@ module UnicodeTitlecase
           end
         end
 
-        x = x - [' ']
+        component_words = component_words - [' ']
 
         # capitalize first and last words
-        x.first.to_s.smart_capitalize!
+        component_words.first.to_s.smart_capitalize!
         # Uncomment the next line if you want the last word to be always initial caps
-        x.last.to_s.smart_capitalize!
+        component_words.last.to_s.smart_capitalize!
 
         # small words after colons are capitalized
-        x.join(" ").gsub(/:\s?(\W*#{SMALL_WORDS.join("|")}\W*)\s/) { ": #{$1.smart_capitalize} " }
+        component_words.join(" ").gsub(/:\s?(\W*#{SMALL_WORDS.join("|")}\W*)\s/) { ": #{$1.smart_capitalize} " }
       end
 
       def unicode_titlecase!
@@ -47,10 +47,10 @@ module UnicodeTitlecase
       def smart_capitalize
         # ignore any leading crazy characters and capitalize the first real character
         if self =~ /^['"\(\[']*(\S)/
-          i = index($1)
-          x = self[i,self.length]
+          start_of_word = index($1)
+          word = self[start_of_word, self.length]
           # word with capitals and periods mid-word are left alone
-          self[i,1] = UnicodeUtils.upcase(self[i,1]) unless self.has_caps? or x =~ /\.\w+/
+          self[start_of_word, 1] = UnicodeUtils.upcase(self[start_of_word, 1]) unless self.has_caps? or word =~ /\.\w+/
         end
         self
       end
