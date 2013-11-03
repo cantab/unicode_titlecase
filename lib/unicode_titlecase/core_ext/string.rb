@@ -6,10 +6,11 @@ module UnicodeTitlecase
   module CoreExt
     module String
 
+      # List of exceptions: SMALL_WORDS are words that should always be in lowercase; BIG_WORDS are words that should always be in uppercase
+      SMALL_WORDS = %w(a an and as at but by be for if in is of on or the to v v. via vs vs.)
+      BIG_WORDS = %w(AB A.B. A/B AS A.S. A/S S.A. KG LLC LLP DNA RNA HBV HIV I II III IV V VI VII VIII IX X AC DC Q&A AT&T)
+
       def unicode_titlecase
-        # List of exceptions: small_words are words that should always be in lowercase; big_words are words that should always be in uppercase
-        small_words = %w(a an and as at but by be for if in is of on or the to v v. via vs vs.)
-        big_words = %w(AB A.B. A/B AS A.S. A/S S.A. KG LLC LLP DNA RNA HBV HIV I II III IV V VI VII VIII IX X AC DC Q&A AT&T)
 
         x = split(" ").map do |word|
           # note: word could contain non-word characters!
@@ -17,10 +18,10 @@ module UnicodeTitlecase
 
           word.replace(UnicodeUtils.downcase(word)) if word.all_caps? and not big_words.include?(word)
 
-          if small_words.include?(UnicodeUtils.downcase(word.gsub(/\W/, "")))
+          if SMALL_WORDS.include?(UnicodeUtils.downcase(word.gsub(/\W/, "")))
             word.replace(UnicodeUtils.downcase(word))
           else
-            if big_words.include?(UnicodeUtils.upcase(word.gsub(/\W/, "")))
+            if BIG_WORDS.include?(UnicodeUtils.upcase(word.gsub(/\W/, "")))
               word.replace(UnicodeUtils.upcase(word))
             else
               word.smart_capitalize!
@@ -36,7 +37,7 @@ module UnicodeTitlecase
         x.last.to_s.smart_capitalize!
 
         # small words after colons are capitalized
-        x.join(" ").gsub(/:\s?(\W*#{small_words.join("|")}\W*)\s/) { ": #{$1.smart_capitalize} " }
+        x.join(" ").gsub(/:\s?(\W*#{SMALL_WORDS.join("|")}\W*)\s/) { ": #{$1.smart_capitalize} " }
       end
 
       def unicode_titlecase!
