@@ -79,17 +79,19 @@ Similarly, you source text may contain words that should always be in lower case
 
 For example, in English, a number of short words such as 'is', 'of' and 'by' might be considered to look better in title cased text if they remain in lower case.
 
-Thus
-
+So
 
 	'a government by the people for the people'.unicode_titlecase
-	
 	
 will give
 
 	'A Government by the People for the People'
 	
 More examples [here](https://github.com/cantab/unicode_titlecase/blob/master/spec/examples/standard_examples.yaml).
+
+## Troubleshooting
+
+- [irb does not display Unicode] (https://github.com/cantab/unicode_titlecase/wiki/Displaying-Unicode-Text-in-irb)
 
 ## Sources and Acknowledgements
 
@@ -129,3 +131,26 @@ Feel free to drop us a line to let us know you would like to work on something o
 5. Create a new [Pull Request] (https://help.github.com/articles/using-pull-requests).
 
 More details on how to contribute can be found at this great Thoughtbot blogpost [8 (new) steps for fixing other people's code] (http://robots.thoughtbot.com/8-new-steps-for-fixing-other-peoples-code).
+
+## License
+
+Copyright (c) 2013 Chong-Yee Khoo, released under the MIT License.
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
