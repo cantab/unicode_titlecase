@@ -8,10 +8,10 @@ Gem::Specification.new do |gem|
   gem.version       = UnicodeTitlecase::VERSION
   gem.authors       = ["Dr Chong-Yee Khoo"]
   gem.email         = ["mail@cykhoo.com"]
-  gem.description   = %q{Gem to enable easy title casing of strings containing Unicode text.}
+  gem.description   = %q{Easy title casing of strings containing Unicode text.}
   gem.summary       = %q{This gem patches the String class to provide a unicode_titlecase method, \
                          which returns a string that is 'title cased': the first letter in each \
-                         significant word is in capitals with the rest in lowercase.}
+                         significant word is in capitals with the rest in lowercase. Able to handle Unicode text.}
   gem.homepage      = "http://github.com/cantab/unicode_titlecase"
 
   gem.files         = `git ls-files`.split($/)

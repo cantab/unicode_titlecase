@@ -47,15 +47,15 @@ More examples are set out in the YAML files in the /spec/examples directory.
 
 ## Unicode Text
 
-With the help of the unicode-utils gem, we can properly handle title casing of Unicode text.
+The headline feature of this gem is easy title casing of Unicode text.
 
-For example, the string 
+For example,
 
-	W Hiszpanii mży, gdy dżdżyste przyjdą dni
+	"W Hiszpanii mży, gdy dżdżyste przyjdą dni".unicode_titlecase
 
-is titlecased to
+gives
 
-	W Hiszpanii Mży, Gdy Dżdżyste Przyjdą Dni
+	"W Hiszpanii Mży, Gdy Dżdżyste Przyjdą Dni"
 
 More examples [here](https://github.com/cantab/unicode_titlecase/blob/master/spec/examples/unicode_examples.yaml).
 
@@ -70,7 +70,7 @@ The unicode_titlecase gem allows you to set up a list of 'big words' which it wi
 produces
 
 	"DNA vs RNA - Difference and Comparison"
-	
+
 More examples [here](https://github.com/cantab/unicode_titlecase/blob/master/spec/examples/bigword_examples.yaml).
 
 ## 'Small Words'
@@ -82,11 +82,11 @@ For example, in English, a number of short words such as 'is', 'of' and 'by' mig
 So
 
 	'a government by the people for the people'.unicode_titlecase
-	
+
 will give
 
 	'A Government by the People for the People'
-	
+
 More examples [here](https://github.com/cantab/unicode_titlecase/blob/master/spec/examples/standard_examples.yaml).
 
 ## Troubleshooting
