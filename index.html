@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Unicode Titlecase Gem by cantab</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Unicode Titlecase Gem</h1>
+        <p>Gem to enable easy title casing of strings containing Unicode text.</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/cantab/unicode_titlecase" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/cantab/unicode_titlecase/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/cantab/unicode_titlecase/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a name="unicode_titlecase-gem" class="anchor" href="#unicode_titlecase-gem"><span class="octicon octicon-link"></span></a>unicode_titlecase gem</h1>
+
+<p><a href="http://badge.fury.io/rb/unicode_titlecase"><img src="https://badge.fury.io/rb/unicode_titlecase.png" alt="Gem Version"></a>
+<a href="https://codeclimate.com/github/cantab/unicode_titlecase"><img src="https://codeclimate.com/github/cantab/unicode_titlecase.png" alt="Code Climate"></a>
+<a href="https://travis-ci.org/cantab/unicode_titlecase"><img src="https://travis-ci.org/cantab/unicode_titlecase.png?branch=master" alt="Build Status"></a></p>
+
+<p>Gem to enable easy title casing of strings containing Unicode text.</p>
+
+<h2>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>This gem patches the String class to provide a unicode_titlecase method, which returns a string that is 'title cased': the first letter in each significant word is in capitals with the rest in lowercase.</p>
+
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>handles text containing Unicode characters</li>
+<li>handles words that should always be left capitalised (e.g., 'HIV')</li>
+<li>handles words that should always be left in lower case (e.g., 'to')</li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem 'unicode_titlecase'
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install unicode_titlecase
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>To use, just call the unicode_titlecase method on any string you want to titlecase.</p>
+
+<p>For example,</p>
+
+<pre><code>require 'unicode_titlecase'
+
+s = "the rain in spain stays mainly in the plain"
+puts s.unicode_titlecase
+</code></pre>
+
+<p>gives</p>
+
+<pre><code>"The Rain in Spain Stays Mainly in the Plain"
+</code></pre>
+
+<p>More examples are set out in the YAML files in the /spec/examples directory.</p>
+
+<h2>
+<a name="unicode-text" class="anchor" href="#unicode-text"><span class="octicon octicon-link"></span></a>Unicode Text</h2>
+
+<p>With the help of the unicode-utils gem, we can properly handle title casing of Unicode text.</p>
+
+<p>For example, the string </p>
+
+<pre><code>W Hiszpanii mży, gdy dżdżyste przyjdą dni
+</code></pre>
+
+<p>is titlecased to</p>
+
+<pre><code>W Hiszpanii Mży, Gdy Dżdżyste Przyjdą Dni
+</code></pre>
+
+<p>More examples <a href="https://github.com/cantab/unicode_titlecase/blob/master/spec/examples/unicode_examples.yaml">here</a>.</p>
+
+<h2>
+<a name="big-words" class="anchor" href="#big-words"><span class="octicon octicon-link"></span></a>'Big Words'</h2>
+
+<p>In some circumstances, you may have source text that contains words that should remain capitalised. These include Roman numerals ('VIII'), legal entity designations ('SA', 'AB', 'LLC') or technical abbreviations ('RNA', DNA', 'HIV').</p>
+
+<p>The unicode_titlecase gem allows you to set up a list of 'big words' which it will keep upper-cased.</p>
+
+<pre><code>"DNA vs RNA - difference and comparison".unicode_titlecase
+</code></pre>
+
+<p>produces</p>
+
+<pre><code>"DNA vs RNA - Difference and Comparison"
+</code></pre>
+
+<p>More examples <a href="https://github.com/cantab/unicode_titlecase/blob/master/spec/examples/bigword_examples.yaml">here</a>.</p>
+
+<h2>
+<a name="small-words" class="anchor" href="#small-words"><span class="octicon octicon-link"></span></a>'Small Words'</h2>
+
+<p>Similarly, you source text may contain words that should always be in lower case.</p>
+
+<p>For example, in English, a number of short words such as 'is', 'of' and 'by' might be considered to look better in title cased text if they remain in lower case.</p>
+
+<p>So</p>
+
+<pre><code>'a government by the people for the people'.unicode_titlecase
+</code></pre>
+
+<p>will give</p>
+
+<pre><code>'A Government by the People for the People'
+</code></pre>
+
+<p>More examples <a href="https://github.com/cantab/unicode_titlecase/blob/master/spec/examples/standard_examples.yaml">here</a>.</p>
+
+<h2>
+<a name="troubleshooting" class="anchor" href="#troubleshooting"><span class="octicon octicon-link"></span></a>Troubleshooting</h2>
+
+<ul>
+<li><a href="https://github.com/cantab/unicode_titlecase/wiki/Displaying-Unicode-Text-in-irb">irb does not display Unicode</a></li>
+</ul><h2>
+<a name="sources-and-acknowledgements" class="anchor" href="#sources-and-acknowledgements"><span class="octicon octicon-link"></span></a>Sources and Acknowledgements</h2>
+
+<p>Much of the source is based on Sam Souder's 'titlecase' gem at <a href="http://github.com/samsouder/titlecase">samsouder/titlecase</a> which in turn is derived from the <a href="http://daringfireball.net/2008/05/title_case">rules</a> formulated by John Gruber.</p>
+
+<h4>
+<a name="grubers-rules" class="anchor" href="#grubers-rules"><span class="octicon octicon-link"></span></a>Gruber's Rules</h4>
+
+<ul>
+<li>capitalize each word</li>
+<li>downcase each of the small_words</li>
+<li>words with capitals after the first character are left alone</li>
+<li>words with periods are left alone</li>
+<li>first and last word always capitalized</li>
+<li>small words after colons are capitalized</li>
+</ul><h4>
+<a name="titlecase-gem-by-samsouder" class="anchor" href="#titlecase-gem-by-samsouder"><span class="octicon octicon-link"></span></a>titlecase gem by samsouder</h4>
+
+<ul>
+<li>implemented rules in Ruby</li>
+<li><a href="http://github.com/samsouder/titlecase">Github repo</a></li>
+<li><a href="http://rubygems.org/gems/titlecase">Rubygems.org</a></li>
+</ul><h4>
+<a name="others" class="anchor" href="#others"><span class="octicon octicon-link"></span></a>Others</h4>
+
+<ul>
+<li>Jim Nanney (<a href="https://github.com/jimnanney">Github</a>) contributed to some of the code (go remote pairing!)</li>
+</ul><h2>
+<a name="further-features" class="anchor" href="#further-features"><span class="octicon octicon-link"></span></a>Further Features?</h2>
+
+<p>Here's a list of things we'd like to see in a future version of the unicode_titlecase gem. Please feel free to take any of these on (see <a href="http://github.com/cantab/unicode_titlecase#contributing">Contributing</a> below).</p>
+
+<ul>
+<li>handle strings with 'mixed case words' such as GmbH</li>
+<li>place exceptions into separate files in e.g., YAML (instead of storing in local variables)</li>
+</ul><h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Feel free to drop us a line to let us know you would like to work on something or if you have an idea. Otherwise, fork, code, commit, push and create pull request, <em>viz</em>:</p>
+
+<ol>
+<li>Create a fork of the repo from <a href="http://github.com/cantab/unicode_titlecase">http://github.com/cantab/unicode_titlecase</a>.</li>
+<li>Create your feature branch (<code>git checkout -b new-feature</code>).</li>
+<li>Write some tests (in RSpec, if you please).</li>
+<li>Write the code that allows the tests to pass.</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>).</li>
+<li>Push to the branch (<code>git push origin new-feature</code>).</li>
+<li>Create a new <a href="https://help.github.com/articles/using-pull-requests">Pull Request</a>.</li>
+</ol><p>More details on how to contribute can be found at this great Thoughtbot blogpost <a href="http://robots.thoughtbot.com/8-new-steps-for-fixing-other-peoples-code">8 (new) steps for fixing other people's code</a>.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2013 Chong-Yee Khoo, released under the MIT License.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/cantab">cantab</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
