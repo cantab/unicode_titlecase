@@ -8,7 +8,7 @@ module UnicodeTitlecase
 
       # List of exceptions: SMALL_WORDS are words that should always be in lowercase; BIG_WORDS are words that should always be in uppercase
       SMALL_WORDS = %w(a an and as at but by be for if in is of on or the to v v. via vs vs.)
-      BIG_WORDS = %w(AB A.B. A/B AS A.S. A/S S.A. KG LLC LLP DNA RNA HBV HIV I II III IV V VI VII VIII IX X AC DC Q&A AT&T)
+      BIG_WORDS = %w(AB A.B. A/B AS A.S. A/S S.A. KG LLC LLP PLC DNA RNA HBV HIV I II III IV V VI VII VIII IX X AC DC Q&A AT&T)
 
       def unicode_titlecase
 
