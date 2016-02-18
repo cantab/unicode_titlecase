@@ -10,7 +10,7 @@ describe String do
 
       it "identifies it as having caps" do
         string = 'fluVial'
-        expect(string.has_caps?).to be_true
+        expect(string.has_caps?).to be true
       end
     end
 
@@ -18,7 +18,7 @@ describe String do
 
       it "identifies it has not having caps" do
         string = 'fluvial'
-        expect(string.has_caps?).to be_false
+        expect(string.has_caps?).to be false
       end
     end
   end
@@ -29,7 +29,7 @@ describe String do
 
       it "identifies it as having all caps" do
         string = 'FLUVIAL'
-        expect(string.all_caps?).to be_true
+        expect(string.all_caps?).to be true
       end
     end
 
@@ -37,7 +37,7 @@ describe String do
 
       it "identifies it has not having all caps" do
         string = 'FLUvIAL'
-        expect(string.all_caps?).to be_false
+        expect(string.all_caps?).to be false
       end
     end
 
@@ -45,7 +45,7 @@ describe String do
 
       it "identifies it has not having all caps" do
         string = 'fluvial'
-        expect(string.all_caps?).to be_false
+        expect(string.all_caps?).to be false
       end
     end
   end
@@ -56,7 +56,7 @@ describe String do
 
       it "identifies it as being a big word" do
         string = 'HIV'
-        expect(string.is_big_word?).to be_true
+        expect(string.is_big_word?).to be true
       end
     end
 
@@ -64,7 +64,7 @@ describe String do
 
       it "identifies it as not being a big word" do
         string = 'SIV'
-        expect(string.is_big_word?).to be_false
+        expect(string.is_big_word?).to be false
       end
     end
   end
@@ -75,7 +75,7 @@ describe String do
 
       it "identifies it as being a small word" do
         string = 'is'
-        expect(string.is_small_word?).to be_true
+        expect(string.is_small_word?).to be true
       end
     end
 
@@ -83,7 +83,7 @@ describe String do
 
       it "identifies it as not being a small word" do
         string = 'tis'
-        expect(string.is_small_word?).to be_false
+        expect(string.is_small_word?).to be false
       end
     end
   end
