@@ -23,4 +23,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 3.1'
 
   gem.add_runtime_dependency 'unicode_utils'
+  spec.add_runtime_dependency "gli"
 end

@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+require 'gli'
+require 'unicode_titlecase'
+
+include GLI::App
+
+program_desc 'Converts string into titlecase, with Unicode handling'
+
+version UnicodeTitlecase::VERSION
+
+subcommand_option_handling :normal
+arguments :strict
+
+desc "Converts string into titlecase, with Unicode handling"
+arg_name 'input_string'
+
+command :convert do |c|
+
+  c.action do |global_options, options, args|
+    args.each do |arg|
+      puts arg.unicode_titlecase
+    end
+  end
+end
+
+exit run(ARGV)
