@@ -31,8 +31,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "rake", "~> 10.3"
-  spec.add_development_dependency "rspec", "~> 3.1"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec"
 
   spec.add_runtime_dependency "unicode_utils"
   spec.add_runtime_dependency "gli"
