@@ -44,7 +44,7 @@ module UnicodeTitlecase
         if self =~ /^['"\(\[']*(\S)/
           start_of_word = index($1)
           word = self[start_of_word, self.length]
-          # word with capitals and periods mid-word are left alone
+          # words with capitals and periods mid-word are left alone
           self[start_of_word, 1] = UnicodeUtils.upcase(self[start_of_word, 1]) unless self.has_caps? or word =~ /\.\w+/
         end
         self
