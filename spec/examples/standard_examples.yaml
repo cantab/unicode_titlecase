@@ -65,6 +65,3 @@ should_pass:
   -
     example: "this is a test.com!?"
     expect:  "This is a test.com!?"
-  -
-    example: ""
-    expect:  ""

@@ -162,6 +162,27 @@ describe String do
       end
     end
 
+    context "word with quote mark following colon" do
+
+      context "colon space single quote word space" do
+        it "does not capitalize word" do
+          expect(': \'a '.smart_capitalize).to eq(': \'a ')
+        end
+      end
+
+      context "colon space double quote word space" do
+        it "does not capitalize word" do
+          expect(': "a '.smart_capitalize).to eq(': "a ')
+        end
+      end
+
+      context "colon space word space" do
+        it "does not capitalize word" do
+          expect(': a '.smart_capitalize).to eq(': a ')
+        end
+      end
+    end
+
     context "word with leading open bracket" do
       it "capitalizes word properly" do
         expect('(fluvial'.smart_capitalize).to eq('(Fluvial')
@@ -212,6 +233,31 @@ describe String do
       it "capitalizes small words after colons" do
         string = 'end: a begining'
         expect(String.new.capitalize_small_words_after_colons(string)).to eq('end: A begining')
+      end
+
+      context "word with quote mark following colon" do
+
+        context "colon space single quote word space" do
+          it "capitalizes word" do
+            string = ': \'a '
+            expect(String.new.capitalize_small_words_after_colons(string)).to eq(': \'A ')
+          end
+        end
+
+        context "colon space double quote word space" do
+
+          it "capitalizes word" do
+            string = ': "a '
+            expect(String.new.capitalize_small_words_after_colons(string)).to eq(': "A ')
+          end
+        end
+
+        context "colon space word space" do
+          it "capitalizes word" do
+            string = ': a '
+            expect(String.new.capitalize_small_words_after_colons(string)).to eq(': A ')
+          end
+        end
       end
     end
 
