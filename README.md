@@ -1,7 +1,7 @@
 # unicode_titlecase gem
+![Ruby](https://github.com/cantab/unicode_titlecase/workflows/Ruby/badge.svg)
 [![Gem Version](https://badge.fury.io/rb/unicode_titlecase.png)](http://badge.fury.io/rb/unicode_titlecase)
 [![Code Climate](https://codeclimate.com/github/cantab/unicode_titlecase.png)](https://codeclimate.com/github/cantab/unicode_titlecase)
-[![Build Status](https://travis-ci.org/cantab/unicode_titlecase.png?branch=master)](https://travis-ci.org/cantab/unicode_titlecase)
 
 Gem to enable easy title casing of strings containing Unicode text.
 
